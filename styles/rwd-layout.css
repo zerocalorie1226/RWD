@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.group1 {
+  background: gold;
+}
+.group2 {
+  background: pink;
+}
+.group3 {
+  background: lightgreen;
+}
+.group4 {
+  background: skyblue;
+}
+.group5 {
+  background: salmon;
+}
+.group6 {
+  background: violet;
+}
+.group7 {
+  background: aquamarine;
+}
+.group8 {
+  background: lightseagreen;
+}
+.group9 {
+  background: mediumblue;
+}
+.group10 {
+  background: midnightblue;
+}
+.group11 {
+  background: olive;
+}
+.group12 {
+  background: sandybrown;
+}
+
+/* 모든 디바이스 */
+.container {
+  background: silver;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 12px;
+}
+
+div[class*='group'] {
+  width: 100%;
+  height: 50px;
+  margin: 12px 0;
+  padding: 0 12px;
+}
+
+/* 768px 이상 */
+@media (min-width: 768px) {
+  div[class*='group'] {
+    width: 50%;
+    height: 100px;
+  }
+}
+/* 1280px 이상 */
+@media (min-width: 1280px) {
+  div[class*='group'] {
+    width: 20%;
+    height: 200px;
+  }
+}
