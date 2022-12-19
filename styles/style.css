@@ -236,6 +236,7 @@ input[type='search'] {
   .appMain {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-template-areas: 'book' 'news' 'board' ' favorite' 'twitter';
   }
 }
 
