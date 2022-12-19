@@ -135,6 +135,22 @@ input[type='search'] {
   background-position: 0 -115px;
 }
 
+.accentBook {
+  color: var(--accent-book);
+}
+.accentNews {
+  color: var(--accent-news);
+}
+.accentBoard {
+  color: var(--accent-board);
+}
+.accentFavorite {
+  color: var(--accent-favorite);
+}
+.accentTwitter {
+  color: var(--accent-twitter);
+}
+
 /* 공통 추천 서적 */
 .book {
   grid-area: book;
