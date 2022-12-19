@@ -42,3 +42,44 @@ body {
 .group12 {
   background: SandyBrown;
 }
+
+/* 공통 레이아웃 */
+.container {
+  border: 5px solid black;
+  margin: 50px;
+  display: grid;
+  gap: 24px;
+  grid-template-rows: repeat(3, 200px);
+}
+
+/* 모바일 레이아웃 */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .group2 {
+    grid-area: 1/1/2/3;
+  }
+}
+
+/* 데스크탑 레이아웃 */
+@media (min-width: 769px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .group1 {
+    grid-area: 2/1/4/5;
+  }
+  .group2 {
+    grid-area: 1/1/2/13;
+  }
+  .group3 {
+    grid-area: 3/6/4/13;
+  }
+  .group4 {
+    grid-area: 2/5/3/10;
+  }
+  .group5 {
+    grid-area: 2/10/3/13;
+  }
+}
