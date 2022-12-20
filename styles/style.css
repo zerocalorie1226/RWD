@@ -210,9 +210,9 @@ input[type='search'] {
 /* 공통 게시판 */
 .board {
   grid-area: board;
-  /* position: relative; */
   display: flex;
   flex-flow: row wrap;
+  overflow: hidden;
 }
 
 .board__title {
@@ -225,6 +225,7 @@ input[type='search'] {
   display: flex;
   flex-flow: column nowrap;
   gap: var(--spacing-sm);
+  width: 100%;
 }
 
 .board__item {
@@ -233,14 +234,17 @@ input[type='search'] {
 }
 
 .board__link {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: calc(100% - 6.25em);
 }
 
 .board__date {
   flex: 0 0 auto;
+  width: 6.25em;
+  text-align: right;
 }
 
 .board__more {
@@ -249,14 +253,40 @@ input[type='search'] {
 
 /* 공통 인기 사이트 */
 .favorite {
-  /* background: skyblue; */
   grid-area: favorite;
 }
 
 /* 공통 트위터 */
 .twitter {
-  /* background: burlywood; */
   grid-area: twitter;
+}
+
+.twitter__userInfo {
+  display: inline-flex;
+  gap: var(--spacing-xs);
+}
+
+.twitter__userProfile {
+  width: 25%;
+  min-width: 3.125rem;
+  max-width: 5.625rem;
+  aspect-ratio: 1/1;
+  float: right;
+  margin-left: var(--spacing-xs);
+}
+
+.twitter__userProfileImage {
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 30% 40%;
+  width: 100%;
+  height: 100%;
+}
+
+.twitter__date {
+  display: block;
+  margin-top: var(--spacing-xs);
 }
 
 /* 모바일 디바이스 (Mobile Device) */
@@ -377,6 +407,18 @@ input[type='search'] {
       'favorite'
       'twitter';
   }
+
+  /* 모바일 인기 사이트 */
+  .favorite__item {
+    margin-top: var(--spacing-sm);
+  }
+
+  .favorite__link::after {
+    content: attr(data-tooltip);
+    color: var(--accent-favorite);
+    font-size: var(--text-sm);
+    margin-left: var(--spacing-xs);
+  }
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -444,16 +486,15 @@ input[type='search'] {
       'book book book book twitter twitter twitter twitter twitter favorite favorite favorite'
       'book book book book . board board board board board board board';
   }
-
-  /* 고해상도 배경이미지 미디어쿼리 */
-  @media (-webkit-min-device-pixel-ratio: 2),
-    (min--moz-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .logo__link {
-      background-image: url(./../images/webcafe-logo@2x.png);
-    }
+}
+/* 고해상도 배경이미지 미디어쿼리 */
+@media (-webkit-min-device-pixel-ratio: 2),
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .logo__link {
+    background-image: url(./../images/webcafe-logo@2x.png);
   }
 }
