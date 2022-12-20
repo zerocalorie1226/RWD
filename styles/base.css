@@ -22,7 +22,7 @@ body {
   background-color: #fff;
 }
 
-/* 유연한 미디어  */
+/* 유연한 미디어 */
 img {
   max-width: 100%;
   height: auto;
@@ -31,4 +31,37 @@ img {
 video {
   width: 100%;
   height: auto;
+}
+
+/* 가로가 100%일 때 세로는 56.25% */
+
+/* 반응형 Iframe */
+
+.news__videoContainer {
+  width: auto;
+}
+
+.iframeWrapper {
+  background-color: blueviolet;
+  position: relative;
+}
+.iframeRatio-21-9 {
+  aspect-ratio: 21/9;
+}
+.iframeRatio-16-9 {
+  aspect-ratio: 16/9;
+}
+.iframeRatio-4-3 {
+  aspect-ratio: 4/3;
+}
+.iframeRatio-1-1 {
+  aspect-ratio: 1/1;
+}
+
+.iframeWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
